@@ -51,6 +51,31 @@ Ext.extend(changeDomain.window.CreateItem, MODx.Window, {
                             allowBlank: false,
                         }, {
                             xtype: 'textfield',
+                            fieldLabel: 'Город. Родительный падеж Чего (В районе Москвы, В районе Ростова)',
+                            name: 'name_rp',
+                            anchor: '99%',
+                        }, {
+                            xtype: 'textfield',
+                            fieldLabel: 'Город. Дательный падеж Чему (по Москве, по Ростову)',
+                            name: 'name_dp',
+                            anchor: '99%',
+                        },{
+                            xtype: 'textfield',
+                            fieldLabel: 'Город. Винительный падеж Что (Москву, Ростова)',
+                            name: 'name_vp',
+                            anchor: '99%',
+                        },{
+                            xtype: 'textfield',
+                            fieldLabel: 'Город. Творительный падеж Чем (Москвой, Ростовом)',
+                            name: 'name_tp',
+                            anchor: '99%',
+                        },{
+                            xtype: 'textfield',
+                            fieldLabel: 'Город. Предложный падеж О чем (Москве, Ростове)',
+                            name: 'name_pp',
+                            anchor: '99%',
+                        },{
+                            xtype: 'textfield',
                             fieldLabel: _('changedomain_domain'),
                             name: 'domain',
                             anchor: '99%',
@@ -61,6 +86,26 @@ Ext.extend(changeDomain.window.CreateItem, MODx.Window, {
                             name: 'description',
                             anchor: '99%',
                             allowBlank: true,
+                        },{
+                            xtype: 'textfield',
+                            fieldLabel: 'Адрес',
+                            name: 'address',
+                            anchor: '99%',
+                        },{
+                            xtype: 'textfield',
+                            fieldLabel: 'Телефон',
+                            name: 'phone',
+                            anchor: '99%',
+                        },{
+                            xtype: 'textfield',
+                            fieldLabel: 'Телефон 2',
+                            name: 'phone2',
+                            anchor: '99%',
+                        },{
+                            xtype: 'textfield',
+                            fieldLabel: 'Email',
+                            name: 'email',
+                            anchor: '99%',
                         },{
                             xtype: 'textarea',
                             fieldLabel: _('changedomain_keywords'),
@@ -159,7 +204,32 @@ Ext.extend(changeDomain.window.UpdateItem, MODx.Window, {
                             name: 'name',
                             anchor: '99%',
                             allowBlank: false,
+                        },{
+                            xtype: 'textfield',
+                            fieldLabel: 'Город. Родительный падеж Чего (В районе Москвы, В районе Ростова)',
+                            name: 'name_rp',
+                            anchor: '99%',
                         }, {
+                            xtype: 'textfield',
+                            fieldLabel: 'Город. Дательный падеж Чему (по Москве, по Ростову)',
+                            name: 'name_dp',
+                            anchor: '99%',
+                        },{
+                            xtype: 'textfield',
+                            fieldLabel: 'Город. Винительный падеж Что (Москву, Ростова)',
+                            name: 'name_vp',
+                            anchor: '99%',
+                        },{
+                            xtype: 'textfield',
+                            fieldLabel: 'Город. Творительный падеж Чем (Москвой, Ростовом)',
+                            name: 'name_tp',
+                            anchor: '99%',
+                        },{
+                            xtype: 'textfield',
+                            fieldLabel: 'Город. Предложный падеж О чем (Москве, Ростове)',
+                            name: 'name_pp',
+                            anchor: '99%',
+                        },{
                             xtype: 'textfield',
                             fieldLabel: _('changedomain_domain'),
                             name: 'domain',
@@ -170,6 +240,34 @@ Ext.extend(changeDomain.window.UpdateItem, MODx.Window, {
                             fieldLabel: _('changedomain_description'),
                             name: 'description',
                             anchor: '99%',
+                        },{
+                            xtype: 'textfield',
+                            fieldLabel: 'Адрес',
+                            name: 'address',
+                            anchor: '99%',
+                        },{
+                            xtype: 'textfield',
+                            fieldLabel: 'Телефон',
+                            name: 'phone',
+                            anchor: '99%',
+                        },{
+                            xtype: 'textfield',
+                            fieldLabel: 'Телефон 2',
+                            name: 'phone2',
+                            anchor: '99%',
+                        },{
+                            xtype: 'textfield',
+                            fieldLabel: 'Email',
+                            name: 'email',
+                            anchor: '99%',
+                        },{
+                            fieldLabel: 'Логотип'
+                            ,name: 'logo'
+                            ,xtype: 'modx-combo-browser'
+                            ,hideFiles: true
+                            ,source:  MODx.config.default_media_source
+                            ,hideSourceCombo: true
+                            ,anchor: '100%'
                         },{
                             xtype: 'textarea',
                             fieldLabel: _('changedomain_keywords'),

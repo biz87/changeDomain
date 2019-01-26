@@ -63,10 +63,10 @@ class changeDomain
         $this->modx->controller->addLexiconTopic('changedomain:default');
     }
 
-    public function checkHost($httpHost = '', $resourceId = 0){
+    public function checkHost($host = '', $resourceId = 0){
 
         // Определяем запрашиваемый хост
-        $host = stristr($httpHost, '.', true);
+        // $host = stristr($httpHost, '.', true);
         if($host){
             $q = $this->modx->newQuery('changeDomainItem');
             $q->where(array(
@@ -79,7 +79,6 @@ class changeDomain
 
             $response = $this->modx->getObject('changeDomainItem', $q);
             if($response){
-
                 if($resourceId){
                     $optionsResource = $response->getMany('changeDomain', array('domain_id' => $response->get('id'),'resource_id' => $resourceId));
                     if($optionsResource){

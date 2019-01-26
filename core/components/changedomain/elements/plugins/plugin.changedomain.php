@@ -33,28 +33,16 @@ switch ($modx->event->name) {
 
         $host = $matches[1];
 
-        // извлекаем две последние части имени хоста
-        preg_match('/[^.]+\.[^.]+$/', $host, $matches);
-        $domain = $matches[0];
 
-        if($host != $domain){
-            $response = $changeDomain->checkHost($_SERVER['HTTP_HOST'], $modx->resource->get('id'));
-            if($response['status'] == 'success'){
-                if($_SESSION['domain']){
-                    unset($_SESSION['domain']);
-                }
-                $_SESSION['domain'] = $response['response'];
-            }elseif($response['status'] == 'error'){
-                if($modx->getOption('changedomain_save_log')){
-                    $modx->log(MODX_LOG_LEVEL_ERROR, 'Перешли на ' . $_SERVER['HTTP_HOST']);
-                }
-                if($modx->getOption('changedomain_redirect')){
-                    $http = $_SERVER['HTTPS'] ? 'https://' : 'https://';
-                    $modx->sendRedirect($http . $domain, array('responseCode' => 'HTTP/1.1 301 Moved Permanently'));
-                }
+        $response = $changeDomain->checkHost($host, $modx->resource->get('id'));
+        if($response['status'] == 'success'){
+            if($_SESSION['domain']){
+                unset($_SESSION['domain']);
             }
-        }else{
-            //TODO это основной сайт
+            $_SESSION['domain'] = $response['response'];
+            foreach($_SESSION['domain']['values'] as $key=>$value){
+                $modx->setPlaceholder('chd_'.$key, $value);
+            }
         }
         break;
 

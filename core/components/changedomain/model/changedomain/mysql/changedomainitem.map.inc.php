@@ -1,134 +1,225 @@
 <?php
 $xpdo_meta_map['changeDomainItem']= array (
-  'package' => 'changedomain',
-  'version' => '1.1',
-  'table' => 'changedomain_domain',
-  'extends' => 'xPDOSimpleObject',
-  'fields' => 
-  array (
-    'name' => '',
-    'domain' => '',
-    'description' => '',
-    'keywords' => '',
-    'maps' => '',
-    'yandex' => '',
-    'active' => 1,
-  ),
-  'fieldMeta' => 
-  array (
-    'name' => 
-    array (
-      'dbtype' => 'varchar',
-      'precision' => '100',
-      'phptype' => 'string',
-      'null' => false,
-      'default' => '',
-    ),
-    'domain' => 
-    array (
-      'dbtype' => 'varchar',
-      'precision' => '100',
-      'phptype' => 'string',
-      'null' => false,
-      'default' => '',
-    ),
-    'description' => 
-    array (
-      'dbtype' => 'text',
-      'phptype' => 'text',
-      'null' => true,
-      'default' => '',
-    ),
-    'keywords' => 
-    array (
-      'dbtype' => 'text',
-      'phptype' => 'text',
-      'null' => true,
-      'default' => '',
-    ),
-    'maps' => 
-    array (
-      'dbtype' => 'text',
-      'phptype' => 'text',
-      'null' => true,
-      'default' => '',
-    ),
-    'yandex' => 
-    array (
-      'dbtype' => 'text',
-      'phptype' => 'text',
-      'null' => true,
-      'default' => '',
-    ),
-    'active' => 
-    array (
-      'dbtype' => 'tinyint',
-      'precision' => '1',
-      'phptype' => 'boolean',
-      'null' => true,
-      'default' => 1,
-    ),
-  ),
-  'indexes' => 
-  array (
-    'name' => 
-    array (
-      'alias' => 'name',
-      'primary' => false,
-      'unique' => false,
-      'type' => 'BTREE',
-      'columns' => 
-      array (
-        'name' => 
+    'package' => 'changedomain',
+    'version' => '1.1',
+    'table' => 'changedomain_domain',
+    'extends' => 'xPDOSimpleObject',
+    'fields' =>
         array (
-          'length' => '',
-          'collation' => 'A',
-          'null' => false,
+            'name' => '',
+            'name_rp' => '',
+            'name_dp' => '',
+            'name_vp' => '',
+            'name_tp' => '',
+            'name_pp' => '',
+            'domain' => '',
+            'description' => '',
+            'keywords' => '',
+            'maps' => '',
+            'yandex' => '',
+            'active' => 1,
+            'address' => '',
+            'phone' => '',
+            'phone2' => '',
+            'email' => '',
+            'logo' => '',
         ),
-      ),
-    ),
-    'domain' => 
-    array (
-      'alias' => 'domain',
-      'primary' => false,
-      'unique' => false,
-      'type' => 'BTREE',
-      'columns' => 
-      array (
-        'domain' => 
+    'fieldMeta' =>
         array (
-          'length' => '',
-          'collation' => 'A',
-          'null' => false,
+            'name' =>
+                array (
+                    'dbtype' => 'varchar',
+                    'precision' => '100',
+                    'phptype' => 'string',
+                    'null' => false,
+                    'default' => '',
+                ),
+            'name_rp' =>
+                array (
+                    'dbtype' => 'varchar',
+                    'precision' => '100',
+                    'phptype' => 'string',
+                    'null' => false,
+                    'default' => '',
+                ),
+            'name_dp' =>
+                array (
+                    'dbtype' => 'varchar',
+                    'precision' => '100',
+                    'phptype' => 'string',
+                    'null' => false,
+                    'default' => '',
+                ),
+            'name_vp' =>
+                array (
+                    'dbtype' => 'varchar',
+                    'precision' => '100',
+                    'phptype' => 'string',
+                    'null' => false,
+                    'default' => '',
+                ),
+            'name_tp' =>
+                array (
+                    'dbtype' => 'varchar',
+                    'precision' => '100',
+                    'phptype' => 'string',
+                    'null' => false,
+                    'default' => '',
+                ),
+            'name_pp' =>
+                array (
+                    'dbtype' => 'varchar',
+                    'precision' => '100',
+                    'phptype' => 'string',
+                    'null' => false,
+                    'default' => '',
+                ),
+            'domain' =>
+                array (
+                    'dbtype' => 'varchar',
+                    'precision' => '100',
+                    'phptype' => 'string',
+                    'null' => false,
+                    'default' => '',
+                ),
+            'description' =>
+                array (
+                    'dbtype' => 'text',
+                    'phptype' => 'text',
+                    'null' => true,
+                    'default' => '',
+                ),
+            'keywords' =>
+                array (
+                    'dbtype' => 'text',
+                    'phptype' => 'text',
+                    'null' => true,
+                    'default' => '',
+                ),
+            'maps' =>
+                array (
+                    'dbtype' => 'text',
+                    'phptype' => 'text',
+                    'null' => true,
+                    'default' => '',
+                ),
+            'yandex' =>
+                array (
+                    'dbtype' => 'text',
+                    'phptype' => 'text',
+                    'null' => true,
+                    'default' => '',
+                ),
+            'active' =>
+                array (
+                    'dbtype' => 'tinyint',
+                    'precision' => '1',
+                    'phptype' => 'boolean',
+                    'null' => true,
+                    'default' => 1,
+                ),
+            'address' =>
+                array (
+                    'dbtype' => 'varchar',
+                    'precision' => '255',
+                    'phptype' => 'string',
+                    'null' => false,
+                    'default' => '',
+                ),
+            'phone' =>
+                array (
+                    'dbtype' => 'varchar',
+                    'precision' => '255',
+                    'phptype' => 'string',
+                    'null' => false,
+                    'default' => '',
+                ),
+            'phone2' =>
+                array (
+                    'dbtype' => 'varchar',
+                    'precision' => '255',
+                    'phptype' => 'string',
+                    'null' => false,
+                    'default' => '',
+                ),
+            'email' =>
+                array (
+                    'dbtype' => 'varchar',
+                    'precision' => '255',
+                    'phptype' => 'string',
+                    'null' => false,
+                    'default' => '',
+                ),
+            'logo' =>
+                array (
+                    'dbtype' => 'varchar',
+                    'precision' => '255',
+                    'phptype' => 'string',
+                    'null' => false,
+                    'default' => '',
+                ),
+
         ),
-      ),
-    ),
-    'active' => 
-    array (
-      'alias' => 'active',
-      'primary' => false,
-      'unique' => false,
-      'type' => 'BTREE',
-      'columns' => 
-      array (
-        'active' => 
+    'indexes' =>
         array (
-          'length' => '',
-          'collation' => 'A',
-          'null' => false,
+            'name' =>
+                array (
+                    'alias' => 'name',
+                    'primary' => false,
+                    'unique' => false,
+                    'type' => 'BTREE',
+                    'columns' =>
+                        array (
+                            'name' =>
+                                array (
+                                    'length' => '',
+                                    'collation' => 'A',
+                                    'null' => false,
+                                ),
+                        ),
+                ),
+            'domain' =>
+                array (
+                    'alias' => 'domain',
+                    'primary' => false,
+                    'unique' => false,
+                    'type' => 'BTREE',
+                    'columns' =>
+                        array (
+                            'domain' =>
+                                array (
+                                    'length' => '',
+                                    'collation' => 'A',
+                                    'null' => false,
+                                ),
+                        ),
+                ),
+            'active' =>
+                array (
+                    'alias' => 'active',
+                    'primary' => false,
+                    'unique' => false,
+                    'type' => 'BTREE',
+                    'columns' =>
+                        array (
+                            'active' =>
+                                array (
+                                    'length' => '',
+                                    'collation' => 'A',
+                                    'null' => false,
+                                ),
+                        ),
+                ),
         ),
-      ),
-    ),
-  ),
-  'composites' => 
-  array (
-    'changeDomain' => 
-    array (
-      'class' => 'changeDomainOptions',
-      'local' => 'id',
-      'foreign' => 'domain_id',
-      'cardinality' => 'many',
-      'owner' => 'local',
-    ),
-  ),
+    'composites' =>
+        array (
+            'changeDomain' =>
+                array (
+                    'class' => 'changeDomainOptions',
+                    'local' => 'id',
+                    'foreign' => 'domain_id',
+                    'cardinality' => 'many',
+                    'owner' => 'local',
+                ),
+        ),
 );
