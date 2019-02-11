@@ -33,7 +33,9 @@ switch ($modx->event->name) {
 
         $host = $matches[1];
 
-
+        // извлекаем две последние части имени хоста
+        // preg_match('/[^.]+\.[^.]+$/', $host, $matches);
+        // $domain = $matches[0];
         $response = $changeDomain->checkHost($host, $modx->resource->get('id'));
         if($response['status'] == 'success'){
             if($_SESSION['domain']){
@@ -42,6 +44,31 @@ switch ($modx->event->name) {
             $_SESSION['domain'] = $response['response'];
             foreach($_SESSION['domain']['values'] as $key=>$value){
                 $modx->setPlaceholder('chd_'.$key, $value);
+            }
+        }else{
+            $q = $modx->newQuery('changeDomainItem');
+            $q->limit(1);
+            $q-> where(array('main_domain' => 1));
+            $item = $modx->getObject('changeDomainItem', $q);
+            if(!$item){
+                $q = $modx->newQuery('changeDomainItem');
+                $q->limit(1);
+                $q->sortby('id');
+                $item = $modx->getObject('changeDomainItem', $q);
+                if(!$item){
+                    return;
+                }
+            }
+
+            $response = $changeDomain->checkHost($item->domain, $modx->resource->get('id'));
+            if($response['status'] == 'success'){
+                if($_SESSION['domain']){
+                    unset($_SESSION['domain']);
+                }
+                $_SESSION['domain'] = $response['response'];
+                foreach($_SESSION['domain']['values'] as $key=>$value){
+                    $modx->setPlaceholder('chd_'.$key, $value);
+                }
             }
         }
         break;

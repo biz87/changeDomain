@@ -85,32 +85,40 @@ $xpdo_meta_map['changeDomainItem']= array (
             'description' =>
                 array (
                     'dbtype' => 'text',
-                    'phptype' => 'text',
+                    'phptype' => 'string',
                     'null' => true,
                     'default' => '',
                 ),
             'keywords' =>
                 array (
                     'dbtype' => 'text',
-                    'phptype' => 'text',
+                    'phptype' => 'string',
                     'null' => true,
                     'default' => '',
                 ),
             'maps' =>
                 array (
                     'dbtype' => 'text',
-                    'phptype' => 'text',
+                    'phptype' => 'string',
                     'null' => true,
                     'default' => '',
                 ),
             'yandex' =>
                 array (
                     'dbtype' => 'text',
-                    'phptype' => 'text',
+                    'phptype' => 'string',
                     'null' => true,
                     'default' => '',
                 ),
             'active' =>
+                array (
+                    'dbtype' => 'tinyint',
+                    'precision' => '1',
+                    'phptype' => 'boolean',
+                    'null' => true,
+                    'default' => 1,
+                ),
+            'main_domain' =>
                 array (
                     'dbtype' => 'tinyint',
                     'precision' => '1',

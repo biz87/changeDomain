@@ -4,7 +4,12 @@
 
 $snippets = array();
 
-$tmp = array();
+$tmp = array(
+    'import_example' => array(
+        'description' => '',
+        'file' => 'import_example'
+    ),
+);
 
 foreach ($tmp as $k => $v) {
     /** @var modSnippet $snippet */
